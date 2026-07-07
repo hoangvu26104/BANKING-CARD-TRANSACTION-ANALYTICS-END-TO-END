@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "model": "Dummy(stratified)",
+      "pr_auc": 0.018213076883657076,
+      "roc_auc": 0.5065802268826252
+    },
+    {
+      "model": "LogReg(balanced)",
+      "pr_auc": 0.028029621883234906,
+      "roc_auc": 0.6339309770070979
+    },
+    {
+      "model": "XGBoost(spw)",
+      "pr_auc": 0.05595529568108221,
+      "roc_auc": 0.6831946485439707
+    },
+    {
+      "model": "SMOTE+XGBoost",
+      "pr_auc": 0.04901549335041837,
+      "roc_auc": 0.6857568547245294
+    }
+  ],
+  "best": {
+    "model": "XGBoost(spw)",
+    "pr_auc": 0.05595529568108221,
+    "roc_auc": 0.6831946485439707
+  },
+  "n_features": 99,
+  "train_rows": 111077,
+  "test_rows": 46147
+}
