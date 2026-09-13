@@ -1,6 +1,6 @@
 # Xóm Bank — End-to-End Data Analytics & ML Project
 
-**Author:** (điền tên)
+**Author:** Nguyên Vũ
 **Role:** Data Analyst / Data Engineer
 **Stack:** SQL Server · Power BI · Python (scikit-learn, XGBoost, SHAP)
 
