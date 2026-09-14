@@ -162,11 +162,11 @@ Phục vụ: **BQ5, K2** (success/error rate, channel mix).
 
 ## 6. Quyết định đã chốt (2026-06-06)
 
-1. ✅ **Junk dimension** `DimTransactionType` — gom (EntryMode, IsSuccess, ErrorType, IsOnlineEntry).
-2. ✅ **merchant_id = degenerate** trong fact + **DimGeography** cho location (thay DimMerchant).
-3. ✅ **SCD-2** cho `DimCustomer` và `DimCard` — thiết kế sẵn cột lịch sử (xem §4 đã cập nhật). DimDate=SCD-0, DimGeography/DimMcc=SCD-1.
-4. ✅ **DimAudit đầy đủ** + Insert/UpdateAuditKey trên mọi dim & fact (chuẩn workbook).
-5. ⏳ **CategoryGroup** (DimMcc): mặc định **để nguyên description**, chưa gộp nhóm (có thể bổ sung mapping sau khi cần cho BQ6).
+1.  **Junk dimension** `DimTransactionType` — gom (EntryMode, IsSuccess, ErrorType, IsOnlineEntry).
+2.  **merchant_id = degenerate** trong fact + **DimGeography** cho location (thay DimMerchant).
+3.  **SCD-2** cho `DimCustomer` và `DimCard` — thiết kế sẵn cột lịch sử (xem §4 đã cập nhật). DimDate=SCD-0, DimGeography/DimMcc=SCD-1.
+4.  **DimAudit đầy đủ** + Insert/UpdateAuditKey trên mọi dim & fact (chuẩn workbook).
+5.  **CategoryGroup** (DimMcc): mặc định **để nguyên description**, chưa gộp nhóm (có thể bổ sung mapping sau khi cần cho BQ6).
 
 ### Cột SCD-2 chuẩn (thêm vào DimCustomer & DimCard)
 Theo template workbook:
