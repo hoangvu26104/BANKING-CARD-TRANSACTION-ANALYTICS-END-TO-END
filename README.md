@@ -82,9 +82,12 @@ Xây kho dữ liệu 3 tầng: `BankingDB` (OLTP) → `StagingDB` → `BankingDW
 ### 5.3 Power BI — Dashboard & Báo cáo
 Bốn trang dashboard trên star schema: **Executive Overview · Customer & Risk · Merchant & Category · Operations**, kèm báo cáo phân tích và khuyến nghị hành động cho từng bộ phận.
 
+![Xóm Bank Executive Overview Dashboard](03_powerbi/screenshots/01_executive_overview.png)
+
 **Phát hiện chính:** Debit áp đảo Credit (57,8% vs 39,1%) → dư địa tăng doanh thu interchange; danh mục rủi ro thấp (utilization 12,8%) nhưng hạn mức nhóm điểm cao bị dùng dưới tiềm năng; 98,26% giao dịch thành công, lỗi chủ yếu do khách hàng (Insufficient Balance, Bad PIN) chứ không phải hệ thống.
 
-📁 [`03_powerbi/`](03_powerbi/) — [Báo cáo phân tích](03_powerbi/doc/Banking_Analysis_Report.docx)
+> 📄 **[Đọc báo cáo phân tích Power BI đầy đủ](03_powerbi/doc/Banking_Analysis_Report.docx)**  
+> Báo cáo trình bày KPI, insight và khuyến nghị hành động cho từng nhóm stakeholder: Management, Risk, Cards Product/Marketing và Operations.
 
 ### 5.4 Machine Learning — Fraud / Error Detection
 Mô hình phân loại nhị phân **mất cân bằng (1,74%)** dự đoán giao dịch lỗi. Đọc feature từ DW, bổ sung timestamp từ OLTP (giờ giao dịch, velocity). Chống leakage nghiêm ngặt: time-based split, SMOTE chỉ trên train, loại target khỏi feature.
