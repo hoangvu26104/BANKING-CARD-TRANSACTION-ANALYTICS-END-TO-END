@@ -35,6 +35,12 @@ Trong ngành ngân hàng phát hành thẻ, mỗi giao dịch vừa là nguồn 
 | `transactions` | 157.224 | Giao dịch (2022-01 → 2024-10) |
 | `mcc_codes` | 109 | Mã ngành hàng |
 
+**Mô hình phân tích:** `FactTransaction` ở grain một giao dịch, kết nối với các dimension theo quan hệ one-to-many; `DimCreditBand` hỗ trợ sắp xếp và phân tích nhóm điểm tín dụng trong Power BI.
+
+![Xóm Bank Power BI Data Model](03_powerbi/screenshots/data_modeling.png)
+
+📐 [Xem tài liệu thiết kế dimensional chi tiết](02_datawarehouse/dw_design.md)
+
 **Quy ước quan trọng:**
 - JOIN giao dịch với thẻ qua `transactions.card_id = cards.id` (KHÔNG dùng `client_id` — gây fan-out, thổi phồng mọi tổng)
 - "Chi tiêu hợp lệ" (*Valid Spend*) = `errors IS NULL AND amount > 0` (loại giao dịch lỗi và refund)
